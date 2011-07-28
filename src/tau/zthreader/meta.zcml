@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:meta="http://namespaces.zope.org/meta">
+
+    <!-- ######################################################################
+         # The z3c.autoinclude has nothing to do with the tau.zthreader ZCML
+         # directives.  It simply is a convenience that automatically includes
+         # the ZCML configuration files of any packages listed as requirements
+         # in the tau.zthreader setup.py file.
+         ###################################################################### -->
+
+         <include package="z3c.autoinclude" file="meta.zcml" />
+
+         <meta:directives
+             namespace="http://namespaces.zope.org/zope">
+
+             <!-- ##################################################
+                  # Declare a new complex (nested) ZCML directive.
+                  ################################################## -->
+
+                  <meta:complexDirective
+                      name="background-thread"
+                      schema=".interfaces.IBackgroundThreadDirective"
+                      handler=".zcml_directives.backgroundthread_ComplexDirectiveHandler"
+                      >
+
+                      <meta:subdirective
+                          name="argument"
+                          schema=".interfaces.IBackgroundThreadArgumentSubdirective"
+                          />
+
+                  </meta:complexDirective>
+
+         </meta:directives>
+
+</configure>
