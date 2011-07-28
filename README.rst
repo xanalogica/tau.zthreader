@@ -30,13 +30,13 @@ your buildout part definition that constructs your etc/site.zcml file::
 
                         <background-thread callable=".yourmodule.yourthreadfunc">
 
-                            <additional-argument
-                                label="keepalive-host"
+                            <argument
+                                name="keepalive-host"
                                 value="127.0.0.1"
                                 />
 
-                            <additional-argument
-                                label="ping-interval-secs"
+                            <argument
+                                name="ping-interval-secs"
                                 value="30"
                                 />
 
