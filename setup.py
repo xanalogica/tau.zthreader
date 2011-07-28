@@ -30,7 +30,7 @@ setup(
     # Descriptions for Potential Users of Distribution
     description="A BTree based implementation for Zope 2's OFS.",
     long_description=(
-        open('README.txt').read()
+        open('README.rst').read()
         + '\n' + '-'*60 + '\n\n' +
         "Download\n========"
     ),
