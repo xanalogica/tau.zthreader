@@ -28,8 +28,8 @@
    For the complex directive::
 
       <background-thread name="sitedocs" threadfunc=".module.func">
-          <argument label="libpath", value="/usr/share/public" />
-          <argument label="csspath", value="/home/jeff/works" />
+          <argument name="libpath", value="/usr/share/public" />
+          <argument name="csspath", value="/home/jeff/works" />
       </background-thread>
 
    And then you reference the declared background threads as a Zope vocabulary named with

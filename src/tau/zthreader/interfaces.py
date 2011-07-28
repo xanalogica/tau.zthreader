@@ -30,13 +30,13 @@ class IBackgroundThreadDirective(Interface):
              name="keepalive"
              threadfunc=".module.func">
 
-             <extra-argument
-                 label="remote-url"
+             <argument
+                 name="remote-url"
                  value="http://127.0.0.1/keepalive"
                  />
 
-             <extra-argument
-                 label="ping-interval-secs"
+             <argument
+                 name="ping-interval-secs"
                  value="60"
                  />
 
@@ -64,21 +64,10 @@ class IBackgroundThreadArgumentSubdirective(Interface):
 
        Example of the directive:
 
-         <background-thread
-             name="keepalive"
-             threadfunc=".module.func">
-
-             <extra-argument              <---- just the inner directive
-                 argname="remote-url"
-                 argvalue="http://127.0.0.1/keepalive"
-                 />
-
-             <extra-argument
-                 argname="ping-interval-secs"
-                 argvalue="60"
-                 />
-
-         </background-thread>
+         <argument              <---- just the inner directive
+             name="remote-url"
+             value="http://127.0.0.1/keepalive"
+             />
     """
 
     name = TextLine(
